@@ -1,0 +1,29 @@
+diff a/dist/vue-component-inspector.js b/dist/vue-component-inspector.js	(rejected hunks)
+@@ -2093 +2095 @@
+-        contaienr01: __vue_component__$6,contaienr02: __vue_component__$7,contaienr03: __vue_component__$8
++      contaienr01: __vue_component__$6, contaienr02: __vue_component__$7, contaienr03: __vue_component__$8
+@@ -2103,2 +2105,2 @@
+-          defaultValue: function(val) {
+-          }
++      defaultValue: function (val) {
++      }
+@@ -2109,3 +2111,3 @@
+-        componentsView(view){
+-        },
+-        getData01(){
++      componentsView (view) {
++      },
++      getData01 () {
+@@ -2113,2 +2115,2 @@
+-        },
+-        getData02(){
++      },
++      getData02 () {
+@@ -2165,2 +2167,2 @@
+-      inject("data-v-03bf61da_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"page.vue"}, media: undefined })
+-  ,inject("data-v-03bf61da_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"page.vue"}, media: undefined });
++      inject("data-v-ac9f5db6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"page.vue"}, media: undefined })
++  ,inject("data-v-ac9f5db6_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"page.vue"}, media: undefined });
+@@ -2170 +2172 @@
+-    const __vue_scope_id__$9 = "data-v-03bf61da";
++    const __vue_scope_id__$9 = "data-v-ac9f5db6";

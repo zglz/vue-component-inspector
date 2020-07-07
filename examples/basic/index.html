@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../dist/vue-component-inspector.js"></script>
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../../assets/element-ui.css">
+    <!-- 引入组件库 -->
+    <script src="../../assets/element-ui.js"></script>
+</head>
+<body>
+<div id="app">
+    <page></page>
+    <vue-component-inspector/>
+</div>
+</body>
+<script>
+
+    const vm = new Vue({
+        el:'#app'
+    })
+
+</script>
+</html>
