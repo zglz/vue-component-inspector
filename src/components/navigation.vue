@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import { isViewCom } from './../util/util'
+//import { isViewCom } from './../util/util'
 import treeLoading from './treeLoading.vue'
 export default {
   name: 'Navigation',

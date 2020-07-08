@@ -32,9 +32,7 @@ Vue.use(VCI)
 ## 配置参数
 ```js
 const options = {
-  latencyThreshold: 200, // Number of ms before progressbar starts showing, default: 100,
-  router: true, // Show progressbar when navigating routes, default: true
-  http: false // Show progressbar when doing Vue.http, default: true
+  noInspect: [] // 不可审查组件name
 };
 Vue.use(VCI, options)
 ```
@@ -72,7 +70,7 @@ Vue.use(VCI, options)
 #### ⚠️ 注意事项
 
 
-##### 可以审查组件 
+##### 可审查组件 
 
 为了提高调试工具性能，并非所有的组件都具有可审查的权限。 ⚠️<font color=red> **只有组件具有name属性，并且不在noInspect中配置的组件具有审查权限（ 具有name属性&&(!noInspect) ）** </font>
 
