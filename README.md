@@ -117,4 +117,10 @@ $ npm run dev:dist
 ```
 
 
+## 感谢大家使用，如有问题联系我
+
+![](./assets/erweima.jpg)
+
+
+
 
