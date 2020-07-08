@@ -4,7 +4,7 @@
 
 基于 [Element-UI](https://element.faas.ele.me/#/zh-CN/component/installation) 开发。
 
-![](./assets/screenshot1.jpg)
+![](./assets/screenshot.jpg)
 
 
 ## 安装方法 (Vue CLI )
@@ -44,28 +44,28 @@ Vue.use(VCI, options)
 
 ### 视频教程
 
-![](./assets/video1.jpg)
+![](./assets/video.jpg)
 
 视频地址
 
 
 #### 视图栏
-![](./assets/viewBar1.jpg)
+![](./assets/viewBar.jpg)
 
 #### 导航面板
-![](./assets/nav1.png)
+![](./assets/nav.png)
 
 
 #### 基本信息面板
-![](./assets/base1.jpg)
+![](./assets/base.jpg)
 
 
 #### 数据面板
-![](./assets/data1.jpg)
+![](./assets/data.jpg)
 
 
 #### 事件面板
-![](./assets/event1.jpg)
+![](./assets/event.jpg)
 
 
 

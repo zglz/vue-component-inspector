@@ -4,10 +4,11 @@ import { isViewCom } from './util/util'
 import { addEventList } from './helper/event'
 import { createComponentsLabel } from './helper/label'
 export let _Vue
-export function install (Vue) {
+export function install (Vue,options) {
   if (install.installed && _Vue === Vue) return
   install.installed = true
   _Vue = Vue
+
   const componentsLabelCollection = []
   // minxin mounted , destroyed
   Vue.mixin({
