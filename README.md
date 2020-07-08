@@ -74,11 +74,12 @@ Vue.use(VCI, options)
 
 ##### 可以审查组件 
 
-<span style="color:red;">这是比font标签更好的方式。可以试试。</span>
+为了提高调试工具性能，并非所有的组件都具有可审查的权限。 <font color=red> 只有组件具有name属性，并且不在noInspect中配置的组件具有审查权限（ 具有name属性&&(!noInspect) ） </font>
 
-$\color{#FF3030}{red}$
 
-为了提高调试工具性能，并非所有的组件都具有可审查的权限。 $\color{red}{只有具有name属性，并且不在noInspect中配置的组件具有审查权限（ 具有name属性&&(!noInspect) ）}$
+
+
+
 
 
 
