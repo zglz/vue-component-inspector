@@ -74,8 +74,7 @@ Vue.use(VCI, options)
 
 ##### 可以审查组件 
 
-$\color{#4285f4}{更}\color{#ea4335}{丰}\color{#fbbc05}{富}\color{#4285f4}{的}\color{#34a853}{颜}\color{#ea4335}{色}$
-
+<span style="color:red;">这是比font标签更好的方式。可以试试。</span>
 
 $\color{#FF3030}{red}$
 
