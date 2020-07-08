@@ -2,6 +2,9 @@
 
 > Vue-Component-Inspector 是一款 Vue 2.0 开发调试工具，它本身也是一个 Vue 组件。
 
+> 特点：易安装，兼容性强。
+
+
 基于 [Element-UI](https://element.faas.ele.me/#/zh-CN/component/installation) 开发。
 
 ![](./assets/screenshot.jpg)
@@ -44,8 +47,8 @@ Vue.use(VCI, options)
 
 ![](./assets/video.jpg)
 
-视频地址
 
+[视频地址](https://www.bilibili.com/video/BV1JZ4y1u7b1/): https://www.bilibili.com/video/BV1JZ4y1u7b1/
 
 #### 视图栏
 ![](./assets/viewBar.jpg)
@@ -74,16 +77,15 @@ Vue.use(VCI, options)
 
 为了提高调试工具性能，并非所有的组件都具有可审查的权限。 ⚠️<font color=red> **只有组件具有name属性，并且不在noInspect中配置的组件具有审查权限（ 具有name属性&&(!noInspect) ）** </font>
 
-使用 [Element-UI](https://element.faas.ele.me/#/zh-CN/component/installation)，建议配置如下
+使用 [Element-UI](https://element.faas.ele.me/#/zh-CN/component/installation) 作为基础 UI 的项目，建议配置如下：
 ```js
 const options = {
-  noInspect: [] // 不可审查组件name
-};
-Vue.use(VCI, {
     noInspect:['ElPagination', 'ElDialog', 'ElAutocomplete', 'ElDropdown', 'ElDropdownMenu', 'ElDropdownItem', 'ElMenu', 'ElSubmenu', 'ElMenuItem', 'ElMenuItemGroup', 'ElInput', 'ElInputNumber', 'ElRadio', 'ElRadioGroup', 'ElRadioButton', 'ElCheckbox', 'ElCheckboxButton', 'ElCheckboxGroup', 'ElSwitch', 'ElSelect', 'ElOption', 'ElOptionGroup', 'ElButtonGroup', 'ElTable', 'ElTableColumn', 'ElDatePicker', 'ElTimeSelect', 'ElTimePicker', 'ElPopover', 'ElTooltip', 'ElBreadcrumb', 'ElBreadcrumbItem', 'ElForm', 'ElFormItem', 'ElTabs', 'ElTabPane', 'ElTag', 'ElTree', 'ElAlert', 'ElSlider', 'ElIcon', 'ElRow', 'ElCol', 'ElUpload', 'ElProgress', 'ElSpinner', 'ElBadge', 'ElCard', 'ElRate', 'ElSteps', 'ElStep', 'ElCarousel', 'ElScrollbar', 'ElCarouselItem', 'ElCollapse', 'ElCollapseItem', 'ElCascader', 'ElColorPicker', 'ElTransfer', 'ElContainer', 'ElHeader', 'ElAside', 'ElMain', 'ElFooter', 'ElTimeline', 'ElTimelineItem', 'ElLink', 'ElDivider', 'ElImage', 'ElCalendar', 'ElBacktop', 'ElPageHeader', 'ElCascaderPanel', 'ElAvatar', 'ElDrawer', 'ElPopconfirm', 'ElCollapseTransition', 'ElTreeNode', undefined, 'SvgIcon', 'SidebarItem','ElTableBody','ElTableHeader','ElSelectDropdown']
-                })
+};
+Vue.use(VCI, options)
 ```
 
+如果使用其他 UI 库，请自行配置
 
 
 ## 本地开发

@@ -35,6 +35,14 @@
           </template>
           <Event id="event" :curVm="curVm"/>
         </el-collapse-item>
+        <el-collapse-item title="DIY" name="4">
+          <template slot="title">
+            <!--<i class="header-icon el-icon-info"></i>--> DIY
+          </template>
+          <div class="diy">
+              Here's your idea
+          </div>
+        </el-collapse-item>
       </el-collapse>
     </div>
 
@@ -225,7 +233,13 @@ export default {
   .refreshBtn:hover{
       color: #519eff;
   }
-
+   .diy{
+       height: 100px;
+       line-height: 100px;
+       text-align: center;
+       color: #2de523;
+       font-size: 20px;
+   }
 </style>
 <style>
   body{
