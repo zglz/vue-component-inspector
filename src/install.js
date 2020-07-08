@@ -5,7 +5,7 @@ import { NoInspect } from './config'
 import { addEventList } from './helper/event'
 import { createComponentsLabel } from './helper/label'
 export let _Vue
-export function install (Vue,options) {
+export function install (Vue,options={}) {
   if (install.installed && _Vue === Vue) return
   install.installed = true
   _Vue = Vue
