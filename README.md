@@ -74,6 +74,11 @@ Vue.use(VCI, options)
 
 ##### 可以审查组件 
 
+$\color{#4285f4}{更}\color{#ea4335}{丰}\color{#fbbc05}{富}\color{#4285f4}{的}\color{#34a853}{颜}\color{#ea4335}{色}$
+
+
+$\color{#FF3030}{red}$
+
 为了提高调试工具性能，并非所有的组件都具有可审查的权限。 $\color{red}{只有具有name属性，并且不在noInspect中配置的组件具有审查权限（ 具有name属性&&(!noInspect) ）}$
 
 
