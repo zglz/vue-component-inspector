@@ -44,6 +44,7 @@ Vue.use(VCI, options)
 ## 使用教程
 
 ### 视频教程
+[视频地址](https://www.bilibili.com/video/BV1JZ4y1u7b1/): https://www.bilibili.com/video/BV1JZ4y1u7b1/
 
 ![](./assets/video.jpg)
 
@@ -53,12 +54,29 @@ Vue.use(VCI, options)
 #### 视图栏
 ![](./assets/viewBar.jpg)
 
+1.组件视图开关
+
+2.刷新视图按钮
+
+
 #### 导航面板
-![](./assets/nav.png)
+![](./assets/nav.jpg)
+
+3.通过全局变量 $vm 访问当前选中的组件实例 
+
+4.跳转最近的可审查父组件
+
+5.审查组件
+
 
 
 #### 基本信息面板
 ![](./assets/base.jpg)
+
+7.组件名称
+
+8.组件路径
+
 
 
 #### 数据面板
@@ -67,6 +85,10 @@ Vue.use(VCI, options)
 
 #### 事件面板
 ![](./assets/event.jpg)
+
+8.DOM事件
+
+9.组件事件
 
 
 
