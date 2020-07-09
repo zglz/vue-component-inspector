@@ -44,12 +44,12 @@ Vue.use(VCI, options)
 ## 使用教程
 
 ### 视频教程
-[视频地址](https://www.bilibili.com/video/BV1JZ4y1u7b1/): https://www.bilibili.com/video/BV1JZ4y1u7b1/
+[视频地址](https://www.bilibili.com/video/BV19g4y1v7g6): https://www.bilibili.com/video/BV19g4y1v7g6
 
 ![](./assets/video.jpg)
 
 
-[视频地址](https://www.bilibili.com/video/BV1JZ4y1u7b1/): https://www.bilibili.com/video/BV1JZ4y1u7b1/
+[视频地址](https://www.bilibili.com/video/BV19g4y1v7g6): https://www.bilibili.com/video/BV19g4y1v7g6
 
 #### 视图栏
 ![](./assets/viewBar.jpg)
