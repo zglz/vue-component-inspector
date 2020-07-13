@@ -783,7 +783,7 @@
                                 },
                                 attrs: { type: "success" }
                               },
-                              [_vm._v(_vm._s(eventItem.name || "inline-event"))]
+                              [_vm._v(_vm._s(eventItem.name))]
                             ),
                             _vm._v(" "),
                             _c("span", {
@@ -827,6 +827,7 @@
                 "span",
                 { staticStyle: { display: "block", "margin-bottom": "5px" } },
                 [
+                  _vm._v("\n      " + _vm._s(event.type) + "\n      - "),
                   _c(
                     "el-tag",
                     {
@@ -860,12 +861,12 @@
     /* style */
     const __vue_inject_styles__$3 = function (inject) {
       if (!inject) return
-      inject("data-v-a7660dd2_0", { source: "\n.event-container[data-v-a7660dd2]{\n  padding-left: 10px;\n}\n.dom-type[data-v-a7660dd2]{\n  background: rgb(255, 253, 52);\n  border: 1px solid rgb(128, 136, 125);\n  display: inline-block;\n  border-radius: 5px;\n  padding: 1px 5px;\n}\n.codeView[data-v-a7660dd2]{\n  cursor:pointer;\n  vertical-align: -3px;\n  margin-left: 6px;\n  font-size: 20px;\n}\n.codeView[data-v-a7660dd2]:hover{\n  color: #519eff;\n}\n.type-title[data-v-a7660dd2]{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  color: #a6dfa3;\n  font-size: 15px;\n  /*background: #a6dfa3;*/\n  padding: 0px 5px;\n  border-radius: 4px;\n  padding-bottom: 2px;\n  display:inline-block;\n  font-weight: bolder;\n}\n\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\event.vue"],"names":[],"mappings":";AAkFA;EACA,kBAAA;AACA;AACA;EACA,6BAAA;EACA,oCAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AACA;AACA;EACA,cAAA;EACA,oBAAA;EACA,gBAAA;EACA,eAAA;AACA;AACA;EACA,cAAA;AACA;AACA;EACA,mBAAA;EACA,gBAAA;EACA,cAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;EACA,oBAAA;EACA,mBAAA;AACA","file":"event.vue","sourcesContent":["<template>\r\n  <div class=\"event-container\" style=\"\">\r\n    <!--{{curVm&&curVm.$options.eventList}}-->\r\n    <!--DOM-Event-->\r\n    <p class=\"type-title\">DOM-Event</p>\r\n    <br>\r\n    <div v-if=\"curVm&&curVm.$options.eventList&&curVm.$options.eventList.dom&&curVm.$options.eventList.dom.length>0\">\r\n      <span v-for=\"(item , index) in curVm&&curVm.$options.eventList.dom\">\r\n        <div v-if=\"item.isShow\" style=\"padding-left: 20px;\">\r\n          <!--<span class=\"dom-type\">{{item.name}}</span><br>-->\r\n          <span v-for=\"( eventItem , index) in item.event\" style=\"display:block;margin-bottom:5px\">\r\n            {{ eventItem.type }}\r\n            - <el-tag  type=\"success\" style=\"height: 25px;line-height: 25px;\">{{ eventItem.name||'inline-event' }}</el-tag>\r\n            <span class=\"el-icon-view codeView\" style=\"\" @click=\"viewCode(eventItem,'dom')\"/><br>\r\n          </span>\r\n\r\n        </div>\r\n      </span>\r\n    </div>\r\n    <!--Component-Event-->\r\n    <p class=\"type-title\">Component-Event</p>\r\n    <br>\r\n    <div v-if=\"curVm&&curVm.$options.eventList&&curVm.$options.eventList.dom&&curVm.$options.eventList.com.length>0\" style=\"padding-left: 20px;\">\r\n      <span v-for=\"(event , index) in curVm&&curVm.$options.eventList.com\" style=\"display:block;margin-bottom:5px\">\r\n        <!--<span class=\"dom-type\">{{item.name}}</span><br>-->\r\n        <el-tag type=\"success\"  style=\"height: 25px;line-height: 25px;\" >{{ event.name?event.name:'anonymous' }}</el-tag>\r\n        <span class=\"el-icon-view codeView\" style=\"\" @click=\"viewCode(event,'com')\"/><br>\r\n\r\n      </span>\r\n    </div>\r\n\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'Event',\r\n  components: {\r\n  },\r\n  props: {\r\n    curVm: {\r\n      type: null,\r\n      default () {\r\n        return false\r\n      }\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      componentsView: false,\r\n      url: ''\r\n    }\r\n  },\r\n  watch: {\r\n  },\r\n  mounted () {\r\n    //      debugger\r\n  },\r\n  methods: {\r\n    viewCode (eventItem, type) {\r\n      if (type === 'dom') {\r\n        console.log(eventItem.fn)\r\n      } else {\r\n        if (eventItem.name) {\r\n          // find fn\r\n          let $parent = this.curVm.$parent\r\n          while (!$parent[eventItem.name]) {\r\n            $parent = $parent.$parent\r\n          }\r\n          console.log($parent[eventItem.name])\r\n        } else {\r\n          console.log(eventItem.fn)\r\n        }\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .event-container{\r\n    padding-left: 10px;\r\n  }\r\n  .dom-type{\r\n    background: rgb(255, 253, 52);\r\n    border: 1px solid rgb(128, 136, 125);\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    padding: 1px 5px;\r\n  }\r\n  .codeView{\r\n    cursor:pointer;\r\n    vertical-align: -3px;\r\n    margin-left: 6px;\r\n    font-size: 20px;\r\n  }\r\n  .codeView:hover{\r\n    color: #519eff;\r\n  }\r\n  .type-title{\r\n    margin-bottom: 10px;\r\n    margin-top: 10px;\r\n    color: #a6dfa3;\r\n    font-size: 15px;\r\n    /*background: #a6dfa3;*/\r\n    padding: 0px 5px;\r\n    border-radius: 4px;\r\n    padding-bottom: 2px;\r\n    display:inline-block;\r\n    font-weight: bolder;\r\n  }\r\n\r\n</style>\r\n<style>\r\n</style>\r\n\r\n"]}, media: undefined })
-  ,inject("data-v-a7660dd2_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"event.vue"}, media: undefined });
+      inject("data-v-6efb9104_0", { source: "\n.event-container[data-v-6efb9104]{\n  padding-left: 10px;\n}\n.dom-type[data-v-6efb9104]{\n  background: rgb(255, 253, 52);\n  border: 1px solid rgb(128, 136, 125);\n  display: inline-block;\n  border-radius: 5px;\n  padding: 1px 5px;\n}\n.codeView[data-v-6efb9104]{\n  cursor:pointer;\n  vertical-align: -3px;\n  margin-left: 6px;\n  font-size: 20px;\n}\n.codeView[data-v-6efb9104]:hover{\n  color: #519eff;\n}\n.type-title[data-v-6efb9104]{\n  margin-bottom: 10px;\n  margin-top: 10px;\n  color: #a6dfa3;\n  font-size: 15px;\n  /*background: #a6dfa3;*/\n  padding: 0px 5px;\n  border-radius: 4px;\n  padding-bottom: 2px;\n  display:inline-block;\n  font-weight: bolder;\n}\n\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\event.vue"],"names":[],"mappings":";AAkFA;EACA,kBAAA;AACA;AACA;EACA,6BAAA;EACA,oCAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AACA;AACA;EACA,cAAA;EACA,oBAAA;EACA,gBAAA;EACA,eAAA;AACA;AACA;EACA,cAAA;AACA;AACA;EACA,mBAAA;EACA,gBAAA;EACA,cAAA;EACA,eAAA;EACA,uBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;EACA,oBAAA;EACA,mBAAA;AACA","file":"event.vue","sourcesContent":["<template>\r\n  <div class=\"event-container\" style=\"\">\r\n    <!--{{curVm&&curVm.$options.eventList}}-->\r\n    <!--DOM-Event-->\r\n    <p class=\"type-title\">DOM-Event</p>\r\n    <br>\r\n    <div v-if=\"curVm&&curVm.$options.eventList&&curVm.$options.eventList.dom&&curVm.$options.eventList.dom.length>0\">\r\n      <span v-for=\"(item , index) in curVm&&curVm.$options.eventList.dom\">\r\n        <div v-if=\"item.isShow\" style=\"padding-left: 20px;\">\r\n          <!--<span class=\"dom-type\">{{item.name}}</span><br>-->\r\n          <span v-for=\"( eventItem , index) in item.event\" style=\"display:block;margin-bottom:5px\">\r\n            {{ eventItem.type }}\r\n            - <el-tag  type=\"success\" style=\"height: 25px;line-height: 25px;\">{{ eventItem.name }}</el-tag>\r\n            <span class=\"el-icon-view codeView\" style=\"\" @click=\"viewCode(eventItem,'dom')\"/><br>\r\n          </span>\r\n\r\n        </div>\r\n      </span>\r\n    </div>\r\n    <!--Component-Event-->\r\n    <p class=\"type-title\">Component-Event</p>\r\n    <br>\r\n    <div v-if=\"curVm&&curVm.$options.eventList&&curVm.$options.eventList.dom&&curVm.$options.eventList.com.length>0\" style=\"padding-left: 20px;\">\r\n      <span v-for=\"(event , index) in curVm&&curVm.$options.eventList.com\" style=\"display:block;margin-bottom:5px\">\r\n        {{ event.type }}\r\n        - <el-tag type=\"success\"  style=\"height: 25px;line-height: 25px;\" >{{ event.name?event.name:'anonymous' }}</el-tag>\r\n        <span class=\"el-icon-view codeView\" style=\"\" @click=\"viewCode(event,'com')\"/><br>\r\n\r\n      </span>\r\n    </div>\r\n\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'Event',\r\n  components: {\r\n  },\r\n  props: {\r\n    curVm: {\r\n      type: null,\r\n      default () {\r\n        return false\r\n      }\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      componentsView: false,\r\n      url: ''\r\n    }\r\n  },\r\n  watch: {\r\n  },\r\n  mounted () {\r\n    //      debugger\r\n  },\r\n  methods: {\r\n    viewCode (eventItem, type) {\r\n      if (type === 'dom') {\r\n        console.log(eventItem.fn)\r\n      } else {\r\n        if (eventItem.name) {\r\n          // find fn\r\n          let $parent = this.curVm.$parent\r\n          while (!$parent[eventItem.name]) {\r\n            $parent = $parent.$parent\r\n          }\r\n          console.log($parent[eventItem.name])\r\n        } else {\r\n          console.log(eventItem.fn)\r\n        }\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .event-container{\r\n    padding-left: 10px;\r\n  }\r\n  .dom-type{\r\n    background: rgb(255, 253, 52);\r\n    border: 1px solid rgb(128, 136, 125);\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    padding: 1px 5px;\r\n  }\r\n  .codeView{\r\n    cursor:pointer;\r\n    vertical-align: -3px;\r\n    margin-left: 6px;\r\n    font-size: 20px;\r\n  }\r\n  .codeView:hover{\r\n    color: #519eff;\r\n  }\r\n  .type-title{\r\n    margin-bottom: 10px;\r\n    margin-top: 10px;\r\n    color: #a6dfa3;\r\n    font-size: 15px;\r\n    /*background: #a6dfa3;*/\r\n    padding: 0px 5px;\r\n    border-radius: 4px;\r\n    padding-bottom: 2px;\r\n    display:inline-block;\r\n    font-weight: bolder;\r\n  }\r\n\r\n</style>\r\n<style>\r\n</style>\r\n\r\n"]}, media: undefined })
+  ,inject("data-v-6efb9104_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"event.vue"}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$3 = "data-v-a7660dd2";
+    const __vue_scope_id__$3 = "data-v-6efb9104";
     /* module identifier */
     const __vue_module_identifier__$3 = undefined;
     /* functional template */
@@ -1791,6 +1792,7 @@
   //
   //
   //
+  //
 
   var script$7 = {
     name: 'Container01',
@@ -1902,6 +1904,21 @@
         _c("br"),
         _vm._v(" "),
         _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                _vm.i = true;
+              }
+            }
+          },
+          [_vm._v("inline-event")]
+        ),
+        _c("br"),
+        _c("br"),
+        _c("br"),
+        _vm._v(" "),
+        _c(
           "el-button",
           {
             attrs: { type: "primary", icon: "", size: "mini" },
@@ -1925,12 +1942,12 @@
     /* style */
     const __vue_inject_styles__$7 = function (inject) {
       if (!inject) return
-      inject("data-v-6cc93bcb_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"contaienr-01.vue"}, media: undefined })
-  ,inject("data-v-6cc93bcb_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"contaienr-01.vue"}, media: undefined });
+      inject("data-v-17cab9d6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"contaienr-01.vue"}, media: undefined })
+  ,inject("data-v-17cab9d6_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"contaienr-01.vue"}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$7 = "data-v-6cc93bcb";
+    const __vue_scope_id__$7 = "data-v-17cab9d6";
     /* module identifier */
     const __vue_module_identifier__$7 = undefined;
     /* functional template */
@@ -2333,8 +2350,8 @@
           const VnodeEvent = Vnode.data.on;
           if (VnodeEvent) {
               const event = [];
-
               for (const key in VnodeEvent) {
+                  // get eventFnName
                   const eventFullFnName = VnodeEvent[key].fns.name;
                   let eventFnName = '';
                   if (eventFullFnName === key) {
@@ -2355,7 +2372,7 @@
                   // }
 
                   event.push({
-                      name: eventFnName,
+                      name: eventFnName||'inline-event',
                       type: 'on' + key,
                       fn: eventFnName ? vm[eventFnName] : VnodeEvent[key].fns
                   });
@@ -2382,6 +2399,7 @@
       const ComEvent = vm.$options._parentListeners;
 
       for (const key in ComEvent) {
+          // get eventFnName
           const eventFullFnName = ComEvent[key].fns.name;
           let eventFnName = '';
           if (eventFullFnName === key) {
@@ -2406,6 +2424,7 @@
 
           eventList.com.push({
               name: eventFnName,
+              type: key,
               el: vm.el,
               fn: eventFnName ? vm[eventFnName] : ComEvent[key].fns
           });
@@ -2705,4 +2724,3 @@
   return VCI;
 
 })));
-//# sourceMappingURL=vue-component-inspector.js.map

@@ -10,7 +10,7 @@
           <!--<span class="dom-type">{{item.name}}</span><br>-->
           <span v-for="( eventItem , index) in item.event" style="display:block;margin-bottom:5px">
             {{ eventItem.type }}
-            - <el-tag  type="success" style="height: 25px;line-height: 25px;">{{ eventItem.name||'inline-event' }}</el-tag>
+            - <el-tag  type="success" style="height: 25px;line-height: 25px;">{{ eventItem.name }}</el-tag>
             <span class="el-icon-view codeView" style="" @click="viewCode(eventItem,'dom')"/><br>
           </span>
 
@@ -22,8 +22,8 @@
     <br>
     <div v-if="curVm&&curVm.$options.eventList&&curVm.$options.eventList.dom&&curVm.$options.eventList.com.length>0" style="padding-left: 20px;">
       <span v-for="(event , index) in curVm&&curVm.$options.eventList.com" style="display:block;margin-bottom:5px">
-        <!--<span class="dom-type">{{item.name}}</span><br>-->
-        <el-tag type="success"  style="height: 25px;line-height: 25px;" >{{ event.name?event.name:'anonymous' }}</el-tag>
+        {{ event.type }}
+        - <el-tag type="success"  style="height: 25px;line-height: 25px;" >{{ event.name?event.name:'anonymous' }}</el-tag>
         <span class="el-icon-view codeView" style="" @click="viewCode(event,'com')"/><br>
 
       </span>

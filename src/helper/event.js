@@ -20,8 +20,8 @@ export function addEventList (vm) {
         const VnodeEvent = Vnode.data.on
         if (VnodeEvent) {
             const event = []
-
             for (const key in VnodeEvent) {
+                // get eventFnName
                 const eventFullFnName = VnodeEvent[key].fns.name
                 let eventFnName = ''
                 if (eventFullFnName === key) {
@@ -42,7 +42,7 @@ export function addEventList (vm) {
                 // }
 
                 event.push({
-                    name: eventFnName,
+                    name: eventFnName||'inline-event',
                     type: 'on' + key,
                     fn: eventFnName ? vm[eventFnName] : VnodeEvent[key].fns
                 })
@@ -69,6 +69,7 @@ export function addEventList (vm) {
     const ComEvent = vm.$options._parentListeners
 
     for (const key in ComEvent) {
+        // get eventFnName
         const eventFullFnName = ComEvent[key].fns.name
         let eventFnName = ''
         if (eventFullFnName === key) {
@@ -93,6 +94,7 @@ export function addEventList (vm) {
 
         eventList.com.push({
             name: eventFnName,
+            type: key,
             el: vm.el,
             fn: eventFnName ? vm[eventFnName] : ComEvent[key].fns
         })

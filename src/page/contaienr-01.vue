@@ -4,6 +4,7 @@
     <button @click="btnClick01">btnClick01</button><br><br><br>
     <button @click="btnClick02('btnClick02')">btnClick02</button><br><br><br>
     <button @click="mouseover" @mouseover="mouseover">mouseover</button><br><br><br>
+    <button @click="i=true">inline-event</button><br><br><br>
     <el-button type="primary" icon="" size="mini" @click="formCreate">el-button</el-button>
     <!--<div>{{a.b}}</div>-->
     <div v-for="(item,index) in a.b" :key="index" style="">
