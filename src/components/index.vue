@@ -91,16 +91,16 @@ export default {
       }
     },
     'curVm': {
-          handler(val) {
-              let vm = val
-              let path=vm.$options.name
-              while (vm.$parent && vm.$parent.$options.name) {
-                  path = vm.$parent.$options.name + ' / ' + path
-                  vm = vm.$parent
-              }
-              this.path = path
-          }
+      handler (val) {
+        let vm = val
+        let path = vm.$options.name
+        while (vm.$parent && vm.$parent.$options.name) {
+          path = vm.$parent.$options.name + ' / ' + path
+          vm = vm.$parent
+        }
+        this.path = path
       }
+    }
     /*        isShowElementUI: function(val) {
             if(this.componentsView) {
                 this.clearComponentsLabel = this.wiew('com')
@@ -119,7 +119,7 @@ export default {
     toggle () {
       const index = document.getElementById('index-container')
       if (index.style.right === '0px') {
-        index.style.right = '-400px'
+        index.style.right = '-396px'
       } else {
         index.style.right = '0px'
       }
@@ -131,24 +131,24 @@ export default {
       this.dataSource = data
     },
     showComponentsLabel () {
-        this.$root.componentsLabelCollection.map((map, i) => {
-            if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {
-                if (map.vmEl.parentNode) {
-                    map.vmEl.parentNode.appendChild(map.componentsLabel)
-                }
-            }
-            map.componentsLabel.style.display = 'block'
-            map.vmEl.style.outline = '1px solid green'
-            map.vmEl.style.outlineOffset='-4px';
-        })
+      this.$root.componentsLabelCollection.map((map, i) => {
+        if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {
+          if (map.vmEl.parentNode) {
+            map.vmEl.parentNode.appendChild(map.componentsLabel)
+          }
+        }
+        map.componentsLabel.style.display = 'block'
+        map.vmEl.style.outline = '1px solid green'
+        map.vmEl.style.outlineOffset = '-4px'
+      })
     },
     hideComponentsLabel () {
-        this.$root.componentsLabelCollection.map((map, i) => {
-            document.body.appendChild(map.componentsLabel)
-            map.componentsLabel.style.display = 'none'
-            map.vmEl.style.outline = ''
-        })
-        this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()
+      this.$root.componentsLabelCollection.map((map, i) => {
+        document.body.appendChild(map.componentsLabel)
+        map.componentsLabel.style.display = 'none'
+        map.vmEl.style.outline = ''
+      })
+      this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()
     }
   }
 
@@ -169,7 +169,7 @@ export default {
     position:absolute;
     width:400px;
     height:100%;
-    right:-400px;
+    right:-396px;
     bottom:0;
     background: #fff;
     z-index: 10000;
@@ -177,6 +177,7 @@ export default {
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
+    border-left: 4px solid #a6e2c3;
     /*overflow:auto;*/
   }
   .open-btn{

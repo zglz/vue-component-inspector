@@ -1514,16 +1514,16 @@
         }
       },
       'curVm': {
-            handler(val) {
-                let vm = val;
-                let path=vm.$options.name;
-                while (vm.$parent && vm.$parent.$options.name) {
-                    path = vm.$parent.$options.name + ' / ' + path;
-                    vm = vm.$parent;
-                }
-                this.path = path;
-            }
+        handler (val) {
+          let vm = val;
+          let path = vm.$options.name;
+          while (vm.$parent && vm.$parent.$options.name) {
+            path = vm.$parent.$options.name + ' / ' + path;
+            vm = vm.$parent;
+          }
+          this.path = path;
         }
+      }
       /*        isShowElementUI: function(val) {
               if(this.componentsView) {
                   this.clearComponentsLabel = this.wiew('com')
@@ -1542,7 +1542,7 @@
       toggle () {
         const index = document.getElementById('index-container');
         if (index.style.right === '0px') {
-          index.style.right = '-400px';
+          index.style.right = '-396px';
         } else {
           index.style.right = '0px';
         }
@@ -1554,24 +1554,24 @@
         this.dataSource = data;
       },
       showComponentsLabel () {
-          this.$root.componentsLabelCollection.map((map, i) => {
-              if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {
-                  if (map.vmEl.parentNode) {
-                      map.vmEl.parentNode.appendChild(map.componentsLabel);
-                  }
-              }
-              map.componentsLabel.style.display = 'block';
-              map.vmEl.style.outline = '1px solid green';
-              map.vmEl.style.outlineOffset='-4px';
-          });
+        this.$root.componentsLabelCollection.map((map, i) => {
+          if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {
+            if (map.vmEl.parentNode) {
+              map.vmEl.parentNode.appendChild(map.componentsLabel);
+            }
+          }
+          map.componentsLabel.style.display = 'block';
+          map.vmEl.style.outline = '1px solid green';
+          map.vmEl.style.outlineOffset = '-4px';
+        });
       },
       hideComponentsLabel () {
-          this.$root.componentsLabelCollection.map((map, i) => {
-              document.body.appendChild(map.componentsLabel);
-              map.componentsLabel.style.display = 'none';
-              map.vmEl.style.outline = '';
-          });
-          this.$root.clearDomEventLabel && this.$root.clearDomEventLabel();
+        this.$root.componentsLabelCollection.map((map, i) => {
+          document.body.appendChild(map.componentsLabel);
+          map.componentsLabel.style.display = 'none';
+          map.vmEl.style.outline = '';
+        });
+        this.$root.clearDomEventLabel && this.$root.clearDomEventLabel();
       }
     }
 
@@ -1748,12 +1748,12 @@
     /* style */
     const __vue_inject_styles__$6 = function (inject) {
       if (!inject) return
-      inject("data-v-3cfadf78_0", { source: "\n.tool-bar[data-v-3cfadf78]{\n  position: absolute;\n  top: 10px;\n  z-index: 10;\n  background: #ffffff;\n  width: 91%;\n  border-bottom: 1px solid #ebeef5;\n  padding-bottom: 10px;\n}\n.index-container[data-v-3cfadf78]{\n  position:absolute;\n  width:400px;\n  height:100%;\n  right:-400px;\n  bottom:0;\n  background: #fff;\n  z-index: 10000;\n  transition: all 0.2s linear 0s;\n  border: 1px solid #ccc;\n  padding: 10px;\n  box-sizing: border-box;\n  /*overflow:auto;*/\n}\n.open-btn[data-v-3cfadf78]{\n  transform: rotate(-90deg);\n  font-size: 30px;\n  cursor:pointer;\n  position: absolute;\n  top: 0px;\n  left: -36px;\n}\n.open-btn[data-v-3cfadf78]:hover{\n  color: #409eff;\n}\n.data-source[data-v-3cfadf78]{\n  position: absolute;\n  height: 100%;\n  background: lavender;\n  width: 100%;\n  top: 0;\n  right: 0;\n  overflow: auto;\n  z-index: 10;\n}\n.path[data-v-3cfadf78]{\nfont-size: 12px;\nbackground: #a6dfa4;\ncolor: #ffffff;\npadding: 0px 15px;\npadding-bottom: 2px;\nborder-radius: 10px;\n/*font-weight: bolder;*/\n  position: relative;\n  top: -10px;\n  word-wrap: break-word;\n}\n.no-select[data-v-3cfadf78]{\n  color:#a6dfa5;\n  margin-top:50px;\n  text-align:center;\n  font-size: 18px;\n}\n.vm-name[data-v-3cfadf78]{\n    margin-top:50px;\n    font-size: 25px;\n    color: #a6dfa5;\n    text-align:center;\n}\n.refreshBtn[data-v-3cfadf78]{\n    font-size: 18px;\n    margin-left: 6px;\n    cursor: pointer;\n}\n.refreshBtn[data-v-3cfadf78]:hover{\n    color: #519eff;\n}\n.diy[data-v-3cfadf78]{\n     height: 100px;\n     line-height: 100px;\n     text-align: center;\n     color: #2de523;\n     font-size: 20px;\n}\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\index.vue"],"names":[],"mappings":";AA8JA;EACA,kBAAA;EACA,SAAA;EACA,WAAA;EACA,mBAAA;EACA,UAAA;EACA,gCAAA;EACA,oBAAA;AACA;AACA;EACA,iBAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,QAAA;EACA,gBAAA;EACA,cAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AACA;AACA;EACA,yBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,QAAA;EACA,WAAA;AAEA;AACA;EACA,cAAA;AACA;AACA;EACA,kBAAA;EACA,YAAA;EACA,oBAAA;EACA,WAAA;EACA,MAAA;EACA,QAAA;EACA,cAAA;EACA,WAAA;AACA;AACA;AACA,eAAA;AACA,mBAAA;AACA,cAAA;AACA,iBAAA;AACA,mBAAA;AACA,mBAAA;AACA,uBAAA;EACA,kBAAA;EACA,UAAA;EACA,qBAAA;AACA;AACA;EACA,aAAA;EACA,eAAA;EACA,iBAAA;EACA,eAAA;AACA;AACA;IACA,eAAA;IACA,eAAA;IACA,cAAA;IACA,iBAAA;AACA;AACA;IACA,eAAA;IACA,gBAAA;IACA,eAAA;AACA;AACA;IACA,cAAA;AACA;AACA;KACA,aAAA;KACA,kBAAA;KACA,kBAAA;KACA,cAAA;KACA,eAAA;AACA","file":"index.vue","sourcesContent":["<template>\r\n  <div id=\"index-container\" class=\"index-container\" style=\"\">\r\n    <div style=\"height: 100%;overflow: auto;padding-top: 35px;\">\r\n      <!--toggle btn-->\r\n      <i class=\"el-icon-d-caret open-btn\" style=\"\" @click=\"toggle\"/>\r\n      <div class=\"tool-bar\">\r\n        VCI - 1.1.14 <br>\r\n        <!--view switch-->\r\n        <div>\r\n          ComponentsView <el-switch v-model=\"componentsView\" style=\"vertical-align: sub;margin-left: 10px;\"/>\r\n            <i class=\"el-icon-refresh refreshBtn\" @click=\"()=>{componentsView&&showComponentsLabel()}\"></i>\r\n        </div>\r\n      </div>\r\n      <!--components navigation tree-->\r\n      <Navigation :cur-vm=\"curVm\" style=\"margin-top:30px\"/>\r\n      <!--name-->\r\n      <h1 v-if=\"curVm\" class=\"vm-name\">\r\n        <div><{{ curVm&&curVm.$options.name }}></div>\r\n        <span class=\"path\">{{path}}</span>\r\n      </h1>\r\n      <p v-else style=\"\" class=\"no-select\"> select a component to inspect </p>\r\n      <el-collapse v-model=\"activeNames\" style=\"margin-top:50px\" @change=\"handleChange\">\r\n<!--        <el-collapse-item title=\"Basic\" name=\"1\">\r\n          <Basic :curVm=\"curVm\"/>\r\n        </el-collapse-item>-->\r\n        <el-collapse-item title=\"Data\" name=\"2\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Data\r\n          </template>\r\n          <Data id=\"data\" :curVm=\"curVm\" @showData=\"showData\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"Event\" name=\"3\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Event\r\n          </template>\r\n          <Event id=\"event\" :curVm=\"curVm\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"DIY\" name=\"4\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> DIY\r\n          </template>\r\n          <div class=\"diy\">\r\n              Here's your idea\r\n          </div>\r\n        </el-collapse-item>\r\n      </el-collapse>\r\n    </div>\r\n\r\n    <div v-if=\"isShowDataSource\" style=\"\" class=\"data-source\">\r\n      <button @click=\"isShowDataSource=false\">close</button>\r\n      <pre>{{ dataSource }}</pre>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</template>\r\n<script>\r\n// import { ElementUI } from '../config'\r\n// import { isViewCom, addEventList } from './../util/util'\r\nimport Navigation from './navigation.vue'\r\nimport Basic from './basic.vue'\r\nimport Event from './event.vue'\r\nimport Data from './data.vue'\r\nexport default {\r\n  name: 'VueComponentInspector',\r\n  components: {\r\n    Navigation, Basic, Data, Event\r\n  },\r\n  props: {\r\n  },\r\n  data () {\r\n    return {\r\n      path: '',\r\n      componentsView: false,\r\n      activeNames: ['2', '3'],\r\n      isShowElementUI: false,\r\n      clearComponentsLabel: null,\r\n      clearDomEventLabel: null,\r\n      curVm: null,\r\n      dataSource: '',\r\n      isShowDataSource: false\r\n    }\r\n  },\r\n  watch: {\r\n    componentsView: function (val) {\r\n      this.$root.componentsView = val\r\n      if (val) {\r\n        this.showComponentsLabel()\r\n      } else {\r\n        this.hideComponentsLabel()\r\n      }\r\n    },\r\n    'curVm': {\r\n          handler(val) {\r\n              let vm = val\r\n              let path=vm.$options.name\r\n              while (vm.$parent && vm.$parent.$options.name) {\r\n                  path = vm.$parent.$options.name + ' / ' + path\r\n                  vm = vm.$parent\r\n              }\r\n              this.path = path\r\n          }\r\n      }\r\n    /*        isShowElementUI: function(val) {\r\n            if(this.componentsView) {\r\n                this.clearComponentsLabel = this.wiew('com')\r\n            }\r\n        }*/\r\n  },\r\n  mounted () {\r\n    // set VCIIndex\r\n    this.$root.VCIIndex = this\r\n  },\r\n  methods: {\r\n    // change curVm\r\n    change (vm) {\r\n      this.curVm = vm\r\n    },\r\n    toggle () {\r\n      const index = document.getElementById('index-container')\r\n      if (index.style.right === '0px') {\r\n        index.style.right = '-400px'\r\n      } else {\r\n        index.style.right = '0px'\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    },\r\n    showData (data, flag) {\r\n      flag && (this.isShowDataSource = true)\r\n      this.dataSource = data\r\n    },\r\n    showComponentsLabel () {\r\n        this.$root.componentsLabelCollection.map((map, i) => {\r\n            if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {\r\n                if (map.vmEl.parentNode) {\r\n                    map.vmEl.parentNode.appendChild(map.componentsLabel)\r\n                }\r\n            }\r\n            map.componentsLabel.style.display = 'block'\r\n            map.vmEl.style.outline = '1px solid green'\r\n            map.vmEl.style.outlineOffset='-4px';\r\n        })\r\n    },\r\n    hideComponentsLabel () {\r\n        this.$root.componentsLabelCollection.map((map, i) => {\r\n            document.body.appendChild(map.componentsLabel)\r\n            map.componentsLabel.style.display = 'none'\r\n            map.vmEl.style.outline = ''\r\n        })\r\n        this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .tool-bar{\r\n    position: absolute;\r\n    top: 10px;\r\n    z-index: 10;\r\n    background: #ffffff;\r\n    width: 91%;\r\n    border-bottom: 1px solid #ebeef5;\r\n    padding-bottom: 10px;\r\n  }\r\n  .index-container{\r\n    position:absolute;\r\n    width:400px;\r\n    height:100%;\r\n    right:-400px;\r\n    bottom:0;\r\n    background: #fff;\r\n    z-index: 10000;\r\n    transition: all 0.2s linear 0s;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n    /*overflow:auto;*/\r\n  }\r\n  .open-btn{\r\n    transform: rotate(-90deg);\r\n    font-size: 30px;\r\n    cursor:pointer;\r\n    position: absolute;\r\n    top: 0px;\r\n    left: -36px;\r\n\r\n  }\r\n  .open-btn:hover{\r\n    color: #409eff;\r\n  }\r\n  .data-source{\r\n    position: absolute;\r\n    height: 100%;\r\n    background: lavender;\r\n    width: 100%;\r\n    top: 0;\r\n    right: 0;\r\n    overflow: auto;\r\n    z-index: 10;\r\n  }\r\n  .path{\r\n  font-size: 12px;\r\n  background: #a6dfa4;\r\n  color: #ffffff;\r\n  padding: 0px 15px;\r\n  padding-bottom: 2px;\r\n  border-radius: 10px;\r\n  /*font-weight: bolder;*/\r\n    position: relative;\r\n    top: -10px;\r\n    word-wrap: break-word;\r\n  }\r\n  .no-select{\r\n    color:#a6dfa5;\r\n    margin-top:50px;\r\n    text-align:center;\r\n    font-size: 18px;\r\n  }\r\n  .vm-name{\r\n      margin-top:50px;\r\n      font-size: 25px;\r\n      color: #a6dfa5;\r\n      text-align:center;\r\n  }\r\n  .refreshBtn{\r\n      font-size: 18px;\r\n      margin-left: 6px;\r\n      cursor: pointer;\r\n  }\r\n  .refreshBtn:hover{\r\n      color: #519eff;\r\n  }\r\n   .diy{\r\n       height: 100px;\r\n       line-height: 100px;\r\n       text-align: center;\r\n       color: #2de523;\r\n       font-size: 20px;\r\n   }\r\n</style>\r\n<style>\r\n  body{\r\n    overflow:hidden;\r\n  }\r\n\r\n  .vue-component-inspector:hover{\r\n      border: 1.5px solid #0b6207;\r\n  }\r\n\r\n  .event-icon:hover{\r\n      color: #409EFF !important;\r\n  }\r\n  .event-label:hover{\r\n      border-color: #409EFF !important;\r\n  }\r\n\r\n  /* scrollbar style */\r\n  ::-webkit-scrollbar{\r\n      width:9px\r\n  }\r\n\r\n  ::-webkit-scrollbar-track{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .1)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .2)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:hover{\r\n      background:rgba(0, 0, 0, .4)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:window-inactive{\r\n      background:rgba(0, 0, 0, .05)\r\n  }\r\n  /* scrollbar style */\r\n\r\n</style>\r\n\r\n"]}, media: undefined })
-  ,inject("data-v-3cfadf78_1", { source: "\nbody{\n  overflow:hidden;\n}\n.vue-component-inspector:hover{\n    border: 1.5px solid #0b6207;\n}\n.event-icon:hover{\n    color: #409EFF !important;\n}\n.event-label:hover{\n    border-color: #409EFF !important;\n}\n\n/* scrollbar style */\n::-webkit-scrollbar{\n    width:9px\n}\n::-webkit-scrollbar-track{\n    -webkit-border-radius:5px;\n    border-radius:5px;\n    background:rgba(0, 0, 0, .1)\n}\n::-webkit-scrollbar-thumb{\n    -webkit-border-radius:5px;\n    border-radius:5px;\n    background:rgba(0, 0, 0, .2)\n}\n::-webkit-scrollbar-thumb:hover{\n    background:rgba(0, 0, 0, .4)\n}\n::-webkit-scrollbar-thumb:window-inactive{\n    background:rgba(0, 0, 0, .05)\n}\n/* scrollbar style */\n\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\index.vue"],"names":[],"mappings":";AAoPA;EACA,eAAA;AACA;AAEA;IACA,2BAAA;AACA;AAEA;IACA,yBAAA;AACA;AACA;IACA,gCAAA;AACA;;AAEA,oBAAA;AACA;IACA;AACA;AAEA;IACA,yBAAA;IACA,iBAAA;IACA;AACA;AAEA;IACA,yBAAA;IACA,iBAAA;IACA;AACA;AAEA;IACA;AACA;AAEA;IACA;AACA;AACA,oBAAA","file":"index.vue","sourcesContent":["<template>\r\n  <div id=\"index-container\" class=\"index-container\" style=\"\">\r\n    <div style=\"height: 100%;overflow: auto;padding-top: 35px;\">\r\n      <!--toggle btn-->\r\n      <i class=\"el-icon-d-caret open-btn\" style=\"\" @click=\"toggle\"/>\r\n      <div class=\"tool-bar\">\r\n        VCI - 1.1.14 <br>\r\n        <!--view switch-->\r\n        <div>\r\n          ComponentsView <el-switch v-model=\"componentsView\" style=\"vertical-align: sub;margin-left: 10px;\"/>\r\n            <i class=\"el-icon-refresh refreshBtn\" @click=\"()=>{componentsView&&showComponentsLabel()}\"></i>\r\n        </div>\r\n      </div>\r\n      <!--components navigation tree-->\r\n      <Navigation :cur-vm=\"curVm\" style=\"margin-top:30px\"/>\r\n      <!--name-->\r\n      <h1 v-if=\"curVm\" class=\"vm-name\">\r\n        <div><{{ curVm&&curVm.$options.name }}></div>\r\n        <span class=\"path\">{{path}}</span>\r\n      </h1>\r\n      <p v-else style=\"\" class=\"no-select\"> select a component to inspect </p>\r\n      <el-collapse v-model=\"activeNames\" style=\"margin-top:50px\" @change=\"handleChange\">\r\n<!--        <el-collapse-item title=\"Basic\" name=\"1\">\r\n          <Basic :curVm=\"curVm\"/>\r\n        </el-collapse-item>-->\r\n        <el-collapse-item title=\"Data\" name=\"2\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Data\r\n          </template>\r\n          <Data id=\"data\" :curVm=\"curVm\" @showData=\"showData\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"Event\" name=\"3\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Event\r\n          </template>\r\n          <Event id=\"event\" :curVm=\"curVm\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"DIY\" name=\"4\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> DIY\r\n          </template>\r\n          <div class=\"diy\">\r\n              Here's your idea\r\n          </div>\r\n        </el-collapse-item>\r\n      </el-collapse>\r\n    </div>\r\n\r\n    <div v-if=\"isShowDataSource\" style=\"\" class=\"data-source\">\r\n      <button @click=\"isShowDataSource=false\">close</button>\r\n      <pre>{{ dataSource }}</pre>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</template>\r\n<script>\r\n// import { ElementUI } from '../config'\r\n// import { isViewCom, addEventList } from './../util/util'\r\nimport Navigation from './navigation.vue'\r\nimport Basic from './basic.vue'\r\nimport Event from './event.vue'\r\nimport Data from './data.vue'\r\nexport default {\r\n  name: 'VueComponentInspector',\r\n  components: {\r\n    Navigation, Basic, Data, Event\r\n  },\r\n  props: {\r\n  },\r\n  data () {\r\n    return {\r\n      path: '',\r\n      componentsView: false,\r\n      activeNames: ['2', '3'],\r\n      isShowElementUI: false,\r\n      clearComponentsLabel: null,\r\n      clearDomEventLabel: null,\r\n      curVm: null,\r\n      dataSource: '',\r\n      isShowDataSource: false\r\n    }\r\n  },\r\n  watch: {\r\n    componentsView: function (val) {\r\n      this.$root.componentsView = val\r\n      if (val) {\r\n        this.showComponentsLabel()\r\n      } else {\r\n        this.hideComponentsLabel()\r\n      }\r\n    },\r\n    'curVm': {\r\n          handler(val) {\r\n              let vm = val\r\n              let path=vm.$options.name\r\n              while (vm.$parent && vm.$parent.$options.name) {\r\n                  path = vm.$parent.$options.name + ' / ' + path\r\n                  vm = vm.$parent\r\n              }\r\n              this.path = path\r\n          }\r\n      }\r\n    /*        isShowElementUI: function(val) {\r\n            if(this.componentsView) {\r\n                this.clearComponentsLabel = this.wiew('com')\r\n            }\r\n        }*/\r\n  },\r\n  mounted () {\r\n    // set VCIIndex\r\n    this.$root.VCIIndex = this\r\n  },\r\n  methods: {\r\n    // change curVm\r\n    change (vm) {\r\n      this.curVm = vm\r\n    },\r\n    toggle () {\r\n      const index = document.getElementById('index-container')\r\n      if (index.style.right === '0px') {\r\n        index.style.right = '-400px'\r\n      } else {\r\n        index.style.right = '0px'\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    },\r\n    showData (data, flag) {\r\n      flag && (this.isShowDataSource = true)\r\n      this.dataSource = data\r\n    },\r\n    showComponentsLabel () {\r\n        this.$root.componentsLabelCollection.map((map, i) => {\r\n            if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {\r\n                if (map.vmEl.parentNode) {\r\n                    map.vmEl.parentNode.appendChild(map.componentsLabel)\r\n                }\r\n            }\r\n            map.componentsLabel.style.display = 'block'\r\n            map.vmEl.style.outline = '1px solid green'\r\n            map.vmEl.style.outlineOffset='-4px';\r\n        })\r\n    },\r\n    hideComponentsLabel () {\r\n        this.$root.componentsLabelCollection.map((map, i) => {\r\n            document.body.appendChild(map.componentsLabel)\r\n            map.componentsLabel.style.display = 'none'\r\n            map.vmEl.style.outline = ''\r\n        })\r\n        this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .tool-bar{\r\n    position: absolute;\r\n    top: 10px;\r\n    z-index: 10;\r\n    background: #ffffff;\r\n    width: 91%;\r\n    border-bottom: 1px solid #ebeef5;\r\n    padding-bottom: 10px;\r\n  }\r\n  .index-container{\r\n    position:absolute;\r\n    width:400px;\r\n    height:100%;\r\n    right:-400px;\r\n    bottom:0;\r\n    background: #fff;\r\n    z-index: 10000;\r\n    transition: all 0.2s linear 0s;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n    /*overflow:auto;*/\r\n  }\r\n  .open-btn{\r\n    transform: rotate(-90deg);\r\n    font-size: 30px;\r\n    cursor:pointer;\r\n    position: absolute;\r\n    top: 0px;\r\n    left: -36px;\r\n\r\n  }\r\n  .open-btn:hover{\r\n    color: #409eff;\r\n  }\r\n  .data-source{\r\n    position: absolute;\r\n    height: 100%;\r\n    background: lavender;\r\n    width: 100%;\r\n    top: 0;\r\n    right: 0;\r\n    overflow: auto;\r\n    z-index: 10;\r\n  }\r\n  .path{\r\n  font-size: 12px;\r\n  background: #a6dfa4;\r\n  color: #ffffff;\r\n  padding: 0px 15px;\r\n  padding-bottom: 2px;\r\n  border-radius: 10px;\r\n  /*font-weight: bolder;*/\r\n    position: relative;\r\n    top: -10px;\r\n    word-wrap: break-word;\r\n  }\r\n  .no-select{\r\n    color:#a6dfa5;\r\n    margin-top:50px;\r\n    text-align:center;\r\n    font-size: 18px;\r\n  }\r\n  .vm-name{\r\n      margin-top:50px;\r\n      font-size: 25px;\r\n      color: #a6dfa5;\r\n      text-align:center;\r\n  }\r\n  .refreshBtn{\r\n      font-size: 18px;\r\n      margin-left: 6px;\r\n      cursor: pointer;\r\n  }\r\n  .refreshBtn:hover{\r\n      color: #519eff;\r\n  }\r\n   .diy{\r\n       height: 100px;\r\n       line-height: 100px;\r\n       text-align: center;\r\n       color: #2de523;\r\n       font-size: 20px;\r\n   }\r\n</style>\r\n<style>\r\n  body{\r\n    overflow:hidden;\r\n  }\r\n\r\n  .vue-component-inspector:hover{\r\n      border: 1.5px solid #0b6207;\r\n  }\r\n\r\n  .event-icon:hover{\r\n      color: #409EFF !important;\r\n  }\r\n  .event-label:hover{\r\n      border-color: #409EFF !important;\r\n  }\r\n\r\n  /* scrollbar style */\r\n  ::-webkit-scrollbar{\r\n      width:9px\r\n  }\r\n\r\n  ::-webkit-scrollbar-track{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .1)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .2)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:hover{\r\n      background:rgba(0, 0, 0, .4)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:window-inactive{\r\n      background:rgba(0, 0, 0, .05)\r\n  }\r\n  /* scrollbar style */\r\n\r\n</style>\r\n\r\n"]}, media: undefined });
+      inject("data-v-a7191efa_0", { source: "\n.tool-bar[data-v-a7191efa]{\n  position: absolute;\n  top: 10px;\n  z-index: 10;\n  background: #ffffff;\n  width: 91%;\n  border-bottom: 1px solid #ebeef5;\n  padding-bottom: 10px;\n}\n.index-container[data-v-a7191efa]{\n  position:absolute;\n  width:400px;\n  height:100%;\n  right:-396px;\n  bottom:0;\n  background: #fff;\n  z-index: 10000;\n  transition: all 0.2s linear 0s;\n  border: 1px solid #ccc;\n  padding: 10px;\n  box-sizing: border-box;\n  border-left: 4px solid #a6e2c3;\n  /*overflow:auto;*/\n}\n.open-btn[data-v-a7191efa]{\n  transform: rotate(-90deg);\n  font-size: 30px;\n  cursor:pointer;\n  position: absolute;\n  top: 0px;\n  left: -36px;\n}\n.open-btn[data-v-a7191efa]:hover{\n  color: #409eff;\n}\n.data-source[data-v-a7191efa]{\n  position: absolute;\n  height: 100%;\n  background: lavender;\n  width: 100%;\n  top: 0;\n  right: 0;\n  overflow: auto;\n  z-index: 10;\n}\n.path[data-v-a7191efa]{\nfont-size: 12px;\nbackground: #a6dfa4;\ncolor: #ffffff;\npadding: 0px 15px;\npadding-bottom: 2px;\nborder-radius: 10px;\n/*font-weight: bolder;*/\n  position: relative;\n  top: -10px;\n  word-wrap: break-word;\n}\n.no-select[data-v-a7191efa]{\n  color:#a6dfa5;\n  margin-top:50px;\n  text-align:center;\n  font-size: 18px;\n}\n.vm-name[data-v-a7191efa]{\n    margin-top:50px;\n    font-size: 25px;\n    color: #a6dfa5;\n    text-align:center;\n}\n.refreshBtn[data-v-a7191efa]{\n    font-size: 18px;\n    margin-left: 6px;\n    cursor: pointer;\n}\n.refreshBtn[data-v-a7191efa]:hover{\n    color: #519eff;\n}\n.diy[data-v-a7191efa]{\n     height: 100px;\n     line-height: 100px;\n     text-align: center;\n     color: #2de523;\n     font-size: 20px;\n}\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\index.vue"],"names":[],"mappings":";AA8JA;EACA,kBAAA;EACA,SAAA;EACA,WAAA;EACA,mBAAA;EACA,UAAA;EACA,gCAAA;EACA,oBAAA;AACA;AACA;EACA,iBAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,QAAA;EACA,gBAAA;EACA,cAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,iBAAA;AACA;AACA;EACA,yBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,QAAA;EACA,WAAA;AAEA;AACA;EACA,cAAA;AACA;AACA;EACA,kBAAA;EACA,YAAA;EACA,oBAAA;EACA,WAAA;EACA,MAAA;EACA,QAAA;EACA,cAAA;EACA,WAAA;AACA;AACA;AACA,eAAA;AACA,mBAAA;AACA,cAAA;AACA,iBAAA;AACA,mBAAA;AACA,mBAAA;AACA,uBAAA;EACA,kBAAA;EACA,UAAA;EACA,qBAAA;AACA;AACA;EACA,aAAA;EACA,eAAA;EACA,iBAAA;EACA,eAAA;AACA;AACA;IACA,eAAA;IACA,eAAA;IACA,cAAA;IACA,iBAAA;AACA;AACA;IACA,eAAA;IACA,gBAAA;IACA,eAAA;AACA;AACA;IACA,cAAA;AACA;AACA;KACA,aAAA;KACA,kBAAA;KACA,kBAAA;KACA,cAAA;KACA,eAAA;AACA","file":"index.vue","sourcesContent":["<template>\r\n  <div id=\"index-container\" class=\"index-container\" style=\"\">\r\n    <div style=\"height: 100%;overflow: auto;padding-top: 35px;\">\r\n      <!--toggle btn-->\r\n      <i class=\"el-icon-d-caret open-btn\" style=\"\" @click=\"toggle\"/>\r\n      <div class=\"tool-bar\">\r\n        VCI - 1.1.14 <br>\r\n        <!--view switch-->\r\n        <div>\r\n          ComponentsView <el-switch v-model=\"componentsView\" style=\"vertical-align: sub;margin-left: 10px;\"/>\r\n            <i class=\"el-icon-refresh refreshBtn\" @click=\"()=>{componentsView&&showComponentsLabel()}\"></i>\r\n        </div>\r\n      </div>\r\n      <!--components navigation tree-->\r\n      <Navigation :cur-vm=\"curVm\" style=\"margin-top:30px\"/>\r\n      <!--name-->\r\n      <h1 v-if=\"curVm\" class=\"vm-name\">\r\n        <div><{{ curVm&&curVm.$options.name }}></div>\r\n        <span class=\"path\">{{path}}</span>\r\n      </h1>\r\n      <p v-else style=\"\" class=\"no-select\"> select a component to inspect </p>\r\n      <el-collapse v-model=\"activeNames\" style=\"margin-top:50px\" @change=\"handleChange\">\r\n<!--        <el-collapse-item title=\"Basic\" name=\"1\">\r\n          <Basic :curVm=\"curVm\"/>\r\n        </el-collapse-item>-->\r\n        <el-collapse-item title=\"Data\" name=\"2\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Data\r\n          </template>\r\n          <Data id=\"data\" :curVm=\"curVm\" @showData=\"showData\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"Event\" name=\"3\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Event\r\n          </template>\r\n          <Event id=\"event\" :curVm=\"curVm\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"DIY\" name=\"4\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> DIY\r\n          </template>\r\n          <div class=\"diy\">\r\n              Here's your idea\r\n          </div>\r\n        </el-collapse-item>\r\n      </el-collapse>\r\n    </div>\r\n\r\n    <div v-if=\"isShowDataSource\" style=\"\" class=\"data-source\">\r\n      <button @click=\"isShowDataSource=false\">close</button>\r\n      <pre>{{ dataSource }}</pre>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</template>\r\n<script>\r\n// import { ElementUI } from '../config'\r\n// import { isViewCom, addEventList } from './../util/util'\r\nimport Navigation from './navigation.vue'\r\nimport Basic from './basic.vue'\r\nimport Event from './event.vue'\r\nimport Data from './data.vue'\r\nexport default {\r\n  name: 'VueComponentInspector',\r\n  components: {\r\n    Navigation, Basic, Data, Event\r\n  },\r\n  props: {\r\n  },\r\n  data () {\r\n    return {\r\n      path: '',\r\n      componentsView: false,\r\n      activeNames: ['2', '3'],\r\n      isShowElementUI: false,\r\n      clearComponentsLabel: null,\r\n      clearDomEventLabel: null,\r\n      curVm: null,\r\n      dataSource: '',\r\n      isShowDataSource: false\r\n    }\r\n  },\r\n  watch: {\r\n    componentsView: function (val) {\r\n      this.$root.componentsView = val\r\n      if (val) {\r\n        this.showComponentsLabel()\r\n      } else {\r\n        this.hideComponentsLabel()\r\n      }\r\n    },\r\n    'curVm': {\r\n      handler (val) {\r\n        let vm = val\r\n        let path = vm.$options.name\r\n        while (vm.$parent && vm.$parent.$options.name) {\r\n          path = vm.$parent.$options.name + ' / ' + path\r\n          vm = vm.$parent\r\n        }\r\n        this.path = path\r\n      }\r\n    }\r\n    /*        isShowElementUI: function(val) {\r\n            if(this.componentsView) {\r\n                this.clearComponentsLabel = this.wiew('com')\r\n            }\r\n        }*/\r\n  },\r\n  mounted () {\r\n    // set VCIIndex\r\n    this.$root.VCIIndex = this\r\n  },\r\n  methods: {\r\n    // change curVm\r\n    change (vm) {\r\n      this.curVm = vm\r\n    },\r\n    toggle () {\r\n      const index = document.getElementById('index-container')\r\n      if (index.style.right === '0px') {\r\n        index.style.right = '-396px'\r\n      } else {\r\n        index.style.right = '0px'\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    },\r\n    showData (data, flag) {\r\n      flag && (this.isShowDataSource = true)\r\n      this.dataSource = data\r\n    },\r\n    showComponentsLabel () {\r\n      this.$root.componentsLabelCollection.map((map, i) => {\r\n        if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {\r\n          if (map.vmEl.parentNode) {\r\n            map.vmEl.parentNode.appendChild(map.componentsLabel)\r\n          }\r\n        }\r\n        map.componentsLabel.style.display = 'block'\r\n        map.vmEl.style.outline = '1px solid green'\r\n        map.vmEl.style.outlineOffset = '-4px'\r\n      })\r\n    },\r\n    hideComponentsLabel () {\r\n      this.$root.componentsLabelCollection.map((map, i) => {\r\n        document.body.appendChild(map.componentsLabel)\r\n        map.componentsLabel.style.display = 'none'\r\n        map.vmEl.style.outline = ''\r\n      })\r\n      this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .tool-bar{\r\n    position: absolute;\r\n    top: 10px;\r\n    z-index: 10;\r\n    background: #ffffff;\r\n    width: 91%;\r\n    border-bottom: 1px solid #ebeef5;\r\n    padding-bottom: 10px;\r\n  }\r\n  .index-container{\r\n    position:absolute;\r\n    width:400px;\r\n    height:100%;\r\n    right:-396px;\r\n    bottom:0;\r\n    background: #fff;\r\n    z-index: 10000;\r\n    transition: all 0.2s linear 0s;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n    border-left: 4px solid #a6e2c3;\r\n    /*overflow:auto;*/\r\n  }\r\n  .open-btn{\r\n    transform: rotate(-90deg);\r\n    font-size: 30px;\r\n    cursor:pointer;\r\n    position: absolute;\r\n    top: 0px;\r\n    left: -36px;\r\n\r\n  }\r\n  .open-btn:hover{\r\n    color: #409eff;\r\n  }\r\n  .data-source{\r\n    position: absolute;\r\n    height: 100%;\r\n    background: lavender;\r\n    width: 100%;\r\n    top: 0;\r\n    right: 0;\r\n    overflow: auto;\r\n    z-index: 10;\r\n  }\r\n  .path{\r\n  font-size: 12px;\r\n  background: #a6dfa4;\r\n  color: #ffffff;\r\n  padding: 0px 15px;\r\n  padding-bottom: 2px;\r\n  border-radius: 10px;\r\n  /*font-weight: bolder;*/\r\n    position: relative;\r\n    top: -10px;\r\n    word-wrap: break-word;\r\n  }\r\n  .no-select{\r\n    color:#a6dfa5;\r\n    margin-top:50px;\r\n    text-align:center;\r\n    font-size: 18px;\r\n  }\r\n  .vm-name{\r\n      margin-top:50px;\r\n      font-size: 25px;\r\n      color: #a6dfa5;\r\n      text-align:center;\r\n  }\r\n  .refreshBtn{\r\n      font-size: 18px;\r\n      margin-left: 6px;\r\n      cursor: pointer;\r\n  }\r\n  .refreshBtn:hover{\r\n      color: #519eff;\r\n  }\r\n   .diy{\r\n       height: 100px;\r\n       line-height: 100px;\r\n       text-align: center;\r\n       color: #2de523;\r\n       font-size: 20px;\r\n   }\r\n</style>\r\n<style>\r\n  body{\r\n    overflow:hidden;\r\n  }\r\n\r\n  .vue-component-inspector:hover{\r\n      border: 1.5px solid #0b6207;\r\n  }\r\n\r\n  .event-icon:hover{\r\n      color: #409EFF !important;\r\n  }\r\n  .event-label:hover{\r\n      border-color: #409EFF !important;\r\n  }\r\n\r\n  /* scrollbar style */\r\n  ::-webkit-scrollbar{\r\n      width:9px\r\n  }\r\n\r\n  ::-webkit-scrollbar-track{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .1)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .2)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:hover{\r\n      background:rgba(0, 0, 0, .4)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:window-inactive{\r\n      background:rgba(0, 0, 0, .05)\r\n  }\r\n  /* scrollbar style */\r\n\r\n</style>\r\n\r\n"]}, media: undefined })
+  ,inject("data-v-a7191efa_1", { source: "\nbody{\n  overflow:hidden;\n}\n.vue-component-inspector:hover{\n    border: 1.5px solid #0b6207;\n}\n.event-icon:hover{\n    color: #409EFF !important;\n}\n.event-label:hover{\n    border-color: #409EFF !important;\n}\n\n/* scrollbar style */\n::-webkit-scrollbar{\n    width:9px\n}\n::-webkit-scrollbar-track{\n    -webkit-border-radius:5px;\n    border-radius:5px;\n    background:rgba(0, 0, 0, .1)\n}\n::-webkit-scrollbar-thumb{\n    -webkit-border-radius:5px;\n    border-radius:5px;\n    background:rgba(0, 0, 0, .2)\n}\n::-webkit-scrollbar-thumb:hover{\n    background:rgba(0, 0, 0, .4)\n}\n::-webkit-scrollbar-thumb:window-inactive{\n    background:rgba(0, 0, 0, .05)\n}\n/* scrollbar style */\n\n", map: {"version":3,"sources":["E:\\BaiduNetdiskDownload\\Vue\\vue-component-inspector-1.x\\src\\components\\index.vue"],"names":[],"mappings":";AAqPA;EACA,eAAA;AACA;AAEA;IACA,2BAAA;AACA;AAEA;IACA,yBAAA;AACA;AACA;IACA,gCAAA;AACA;;AAEA,oBAAA;AACA;IACA;AACA;AAEA;IACA,yBAAA;IACA,iBAAA;IACA;AACA;AAEA;IACA,yBAAA;IACA,iBAAA;IACA;AACA;AAEA;IACA;AACA;AAEA;IACA;AACA;AACA,oBAAA","file":"index.vue","sourcesContent":["<template>\r\n  <div id=\"index-container\" class=\"index-container\" style=\"\">\r\n    <div style=\"height: 100%;overflow: auto;padding-top: 35px;\">\r\n      <!--toggle btn-->\r\n      <i class=\"el-icon-d-caret open-btn\" style=\"\" @click=\"toggle\"/>\r\n      <div class=\"tool-bar\">\r\n        VCI - 1.1.14 <br>\r\n        <!--view switch-->\r\n        <div>\r\n          ComponentsView <el-switch v-model=\"componentsView\" style=\"vertical-align: sub;margin-left: 10px;\"/>\r\n            <i class=\"el-icon-refresh refreshBtn\" @click=\"()=>{componentsView&&showComponentsLabel()}\"></i>\r\n        </div>\r\n      </div>\r\n      <!--components navigation tree-->\r\n      <Navigation :cur-vm=\"curVm\" style=\"margin-top:30px\"/>\r\n      <!--name-->\r\n      <h1 v-if=\"curVm\" class=\"vm-name\">\r\n        <div><{{ curVm&&curVm.$options.name }}></div>\r\n        <span class=\"path\">{{path}}</span>\r\n      </h1>\r\n      <p v-else style=\"\" class=\"no-select\"> select a component to inspect </p>\r\n      <el-collapse v-model=\"activeNames\" style=\"margin-top:50px\" @change=\"handleChange\">\r\n<!--        <el-collapse-item title=\"Basic\" name=\"1\">\r\n          <Basic :curVm=\"curVm\"/>\r\n        </el-collapse-item>-->\r\n        <el-collapse-item title=\"Data\" name=\"2\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Data\r\n          </template>\r\n          <Data id=\"data\" :curVm=\"curVm\" @showData=\"showData\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"Event\" name=\"3\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> Event\r\n          </template>\r\n          <Event id=\"event\" :curVm=\"curVm\"/>\r\n        </el-collapse-item>\r\n        <el-collapse-item title=\"DIY\" name=\"4\">\r\n          <template slot=\"title\">\r\n            <!--<i class=\"header-icon el-icon-info\"></i>--> DIY\r\n          </template>\r\n          <div class=\"diy\">\r\n              Here's your idea\r\n          </div>\r\n        </el-collapse-item>\r\n      </el-collapse>\r\n    </div>\r\n\r\n    <div v-if=\"isShowDataSource\" style=\"\" class=\"data-source\">\r\n      <button @click=\"isShowDataSource=false\">close</button>\r\n      <pre>{{ dataSource }}</pre>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</template>\r\n<script>\r\n// import { ElementUI } from '../config'\r\n// import { isViewCom, addEventList } from './../util/util'\r\nimport Navigation from './navigation.vue'\r\nimport Basic from './basic.vue'\r\nimport Event from './event.vue'\r\nimport Data from './data.vue'\r\nexport default {\r\n  name: 'VueComponentInspector',\r\n  components: {\r\n    Navigation, Basic, Data, Event\r\n  },\r\n  props: {\r\n  },\r\n  data () {\r\n    return {\r\n      path: '',\r\n      componentsView: false,\r\n      activeNames: ['2', '3'],\r\n      isShowElementUI: false,\r\n      clearComponentsLabel: null,\r\n      clearDomEventLabel: null,\r\n      curVm: null,\r\n      dataSource: '',\r\n      isShowDataSource: false\r\n    }\r\n  },\r\n  watch: {\r\n    componentsView: function (val) {\r\n      this.$root.componentsView = val\r\n      if (val) {\r\n        this.showComponentsLabel()\r\n      } else {\r\n        this.hideComponentsLabel()\r\n      }\r\n    },\r\n    'curVm': {\r\n      handler (val) {\r\n        let vm = val\r\n        let path = vm.$options.name\r\n        while (vm.$parent && vm.$parent.$options.name) {\r\n          path = vm.$parent.$options.name + ' / ' + path\r\n          vm = vm.$parent\r\n        }\r\n        this.path = path\r\n      }\r\n    }\r\n    /*        isShowElementUI: function(val) {\r\n            if(this.componentsView) {\r\n                this.clearComponentsLabel = this.wiew('com')\r\n            }\r\n        }*/\r\n  },\r\n  mounted () {\r\n    // set VCIIndex\r\n    this.$root.VCIIndex = this\r\n  },\r\n  methods: {\r\n    // change curVm\r\n    change (vm) {\r\n      this.curVm = vm\r\n    },\r\n    toggle () {\r\n      const index = document.getElementById('index-container')\r\n      if (index.style.right === '0px') {\r\n        index.style.right = '-396px'\r\n      } else {\r\n        index.style.right = '0px'\r\n      }\r\n    },\r\n    handleChange (val) {\r\n    },\r\n    showData (data, flag) {\r\n      flag && (this.isShowDataSource = true)\r\n      this.dataSource = data\r\n    },\r\n    showComponentsLabel () {\r\n      this.$root.componentsLabelCollection.map((map, i) => {\r\n        if (map.componentsLabel.parentNode !== map.vmEl.parentNode) {\r\n          if (map.vmEl.parentNode) {\r\n            map.vmEl.parentNode.appendChild(map.componentsLabel)\r\n          }\r\n        }\r\n        map.componentsLabel.style.display = 'block'\r\n        map.vmEl.style.outline = '1px solid green'\r\n        map.vmEl.style.outlineOffset = '-4px'\r\n      })\r\n    },\r\n    hideComponentsLabel () {\r\n      this.$root.componentsLabelCollection.map((map, i) => {\r\n        document.body.appendChild(map.componentsLabel)\r\n        map.componentsLabel.style.display = 'none'\r\n        map.vmEl.style.outline = ''\r\n      })\r\n      this.$root.clearDomEventLabel && this.$root.clearDomEventLabel()\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n  .tool-bar{\r\n    position: absolute;\r\n    top: 10px;\r\n    z-index: 10;\r\n    background: #ffffff;\r\n    width: 91%;\r\n    border-bottom: 1px solid #ebeef5;\r\n    padding-bottom: 10px;\r\n  }\r\n  .index-container{\r\n    position:absolute;\r\n    width:400px;\r\n    height:100%;\r\n    right:-396px;\r\n    bottom:0;\r\n    background: #fff;\r\n    z-index: 10000;\r\n    transition: all 0.2s linear 0s;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n    border-left: 4px solid #a6e2c3;\r\n    /*overflow:auto;*/\r\n  }\r\n  .open-btn{\r\n    transform: rotate(-90deg);\r\n    font-size: 30px;\r\n    cursor:pointer;\r\n    position: absolute;\r\n    top: 0px;\r\n    left: -36px;\r\n\r\n  }\r\n  .open-btn:hover{\r\n    color: #409eff;\r\n  }\r\n  .data-source{\r\n    position: absolute;\r\n    height: 100%;\r\n    background: lavender;\r\n    width: 100%;\r\n    top: 0;\r\n    right: 0;\r\n    overflow: auto;\r\n    z-index: 10;\r\n  }\r\n  .path{\r\n  font-size: 12px;\r\n  background: #a6dfa4;\r\n  color: #ffffff;\r\n  padding: 0px 15px;\r\n  padding-bottom: 2px;\r\n  border-radius: 10px;\r\n  /*font-weight: bolder;*/\r\n    position: relative;\r\n    top: -10px;\r\n    word-wrap: break-word;\r\n  }\r\n  .no-select{\r\n    color:#a6dfa5;\r\n    margin-top:50px;\r\n    text-align:center;\r\n    font-size: 18px;\r\n  }\r\n  .vm-name{\r\n      margin-top:50px;\r\n      font-size: 25px;\r\n      color: #a6dfa5;\r\n      text-align:center;\r\n  }\r\n  .refreshBtn{\r\n      font-size: 18px;\r\n      margin-left: 6px;\r\n      cursor: pointer;\r\n  }\r\n  .refreshBtn:hover{\r\n      color: #519eff;\r\n  }\r\n   .diy{\r\n       height: 100px;\r\n       line-height: 100px;\r\n       text-align: center;\r\n       color: #2de523;\r\n       font-size: 20px;\r\n   }\r\n</style>\r\n<style>\r\n  body{\r\n    overflow:hidden;\r\n  }\r\n\r\n  .vue-component-inspector:hover{\r\n      border: 1.5px solid #0b6207;\r\n  }\r\n\r\n  .event-icon:hover{\r\n      color: #409EFF !important;\r\n  }\r\n  .event-label:hover{\r\n      border-color: #409EFF !important;\r\n  }\r\n\r\n  /* scrollbar style */\r\n  ::-webkit-scrollbar{\r\n      width:9px\r\n  }\r\n\r\n  ::-webkit-scrollbar-track{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .1)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb{\r\n      -webkit-border-radius:5px;\r\n      border-radius:5px;\r\n      background:rgba(0, 0, 0, .2)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:hover{\r\n      background:rgba(0, 0, 0, .4)\r\n  }\r\n\r\n  ::-webkit-scrollbar-thumb:window-inactive{\r\n      background:rgba(0, 0, 0, .05)\r\n  }\r\n  /* scrollbar style */\r\n\r\n</style>\r\n\r\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$6 = "data-v-3cfadf78";
+    const __vue_scope_id__$6 = "data-v-a7191efa";
     /* module identifier */
     const __vue_module_identifier__$6 = undefined;
     /* functional template */
@@ -2424,81 +2424,82 @@
   // clear DomEventLabel-fn
   let clearDomEventLabel = null;
   const EventLabelCollection = [];
-  let componentsLabelProps = {
-      attr:{
-         className:'vue-component-inspector',
-      },
-      style:{
-         position:'absolute',
-         top:0,
-         left:0,
-         margin:'4px',
-         background:'#a6dfa6',
-         cursor:'pointer',
-         fontSize:'8px',
-      }
+  const componentsLabelProps = {
+    attr: {
+      className: 'vue-component-inspector'
+    },
+    style: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      margin: '4px',
+      background: '#a6dfa6',
+      cursor: 'pointer',
+      fontSize: '8px',
+      zIndex: 10
+    }
 
   };
-  let componentsLabelImgProps = {
-      attr:{
-          src:comLabelLogo,
-      },
-      style:{
-         width:'20px',
-         float:'left'
-      }
+  const componentsLabelImgProps = {
+    attr: {
+      src: comLabelLogo
+    },
+    style: {
+      width: '20px',
+      float: 'left'
+    }
 
   };
-  let eventIconProps = {
-      attr:{
-          className:'el-icon-caret-left event-icon'
-      },
-      style:{
-          fontSize:'31px',
-          position:'absolute',
-          left:'-22px',
-          top:'-7px',
-          color:'#a6dfa2',
-      }
+  const eventIconProps = {
+    attr: {
+      className: 'el-icon-caret-left event-icon'
+    },
+    style: {
+      fontSize: '31px',
+      position: 'absolute',
+      left: '-22px',
+      top: '-7px',
+      color: '#a6dfa2'
+    }
 
   };
-  let domEventLabelProps = {
-      attr:{
-          innerText:'e',
-          className:'event-label',
-      },
-      style:{
-          background:'rgb(255, 255, 255)',
-          color:'rgb(166, 223, 162)',
-          border:'3px solid rgb(166, 223, 162)',
-          display:'inline-block',
-          borderRadius:'5px',
-          padding:'3px 5px',
-          position:'absolute',
-          top:'-1px',
-          left: "186px",
-          cursor:'pointer',
-          fontSize:'17px',
-          lineHeight:'10px',
-          marginLeft:'5px',
-          zIndex:'10'
-      }
+  const domEventLabelProps = {
+    attr: {
+      innerText: 'e',
+      className: 'event-label'
+    },
+    style: {
+      background: 'rgb(255, 255, 255)',
+      color: 'rgb(166, 223, 162)',
+      border: '3px solid rgb(166, 223, 162)',
+      display: 'inline-block',
+      borderRadius: '5px',
+      padding: '3px 5px',
+      position: 'absolute',
+      top: '-1px',
+      left: '186px',
+      cursor: 'pointer',
+      fontSize: '17px',
+      lineHeight: '10px',
+      marginLeft: '5px',
+      zIndex: '10'
+    }
 
   };
   // setElementProps
-  function setElementProps(el,props){
-      for (const key in props) {
-          if(key === 'attr'){
-              for (const attrKey in props[key]) {
-                  el[attrKey] = props[key][attrKey];
-              }
-          }
-          if(key === 'style'){
-              for (const styleKey in props[key]) {
-                  el.style[styleKey] = props[key][styleKey];
-              }
-          }
+  function setElementProps (el, props) {
+    for (const key in props) {
+      if (key === 'attr') {
+        for (const attrKey in props[key]) {
+          el[attrKey] = props[key][attrKey];
+        }
       }
+      if (key === 'style') {
+        for (const styleKey in props[key]) {
+          el.style[styleKey] = props[key][styleKey];
+        }
+      }
+    }
   }
   // createDomEventLabel
   function createDomEventLabel (vm) {
@@ -2508,7 +2509,7 @@
         const offsetLeft = map.eventNode.offsetLeft;
         const top = offsetTop;
         const left = map.eventNode.offsetWidth + offsetLeft;
-        setElementProps(map.eventLabel,{style:{top:(top+'px'),left: (left + 'px')}});
+        setElementProps(map.eventLabel, { style: { top: (top + 'px'), left: (left + 'px') }});
       });
     }
     if (vm.$options.eventList) {
@@ -2518,118 +2519,117 @@
       domEvent.map((e, i) => {
         const eventNode = e.el;
 
-    let eventIcon = document.createElement('i');
-    setElementProps(eventIcon,eventIconProps);
-    const span = document.createElement('span');
-    setElementProps(span,domEventLabelProps);
-    span.appendChild(eventIcon);
+        const eventIcon = document.createElement('i');
+        setElementProps(eventIcon, eventIconProps);
+        const span = document.createElement('span');
+        setElementProps(span, domEventLabelProps);
+        span.appendChild(eventIcon);
 
-
-    e.eventLabel = span;
-    nodeEventMap.push({
-      eventNode: eventNode,
-      eventLabel: span
-    });
-    EventLabelCollection.push(span);
-    // eventlabel add event
-    span.addEventListener('click', () => {
-      preVm.$options.eventList.dom.map((dom) => {
-        if (dom.eventLabel === span) {
-            setElementProps(span,{style:{color: '#409EFF',borderColor: '#409EFF'}});
-            setElementProps(eventIcon,{style:{color: '#409EFF'}});
-            dom.isShow = true;
-        } else {
+        e.eventLabel = span;
+        nodeEventMap.push({
+          eventNode: eventNode,
+          eventLabel: span
+        });
+        EventLabelCollection.push(span);
+        // eventlabel add event
+        span.addEventListener('click', () => {
+          preVm.$options.eventList.dom.map((dom) => {
+            if (dom.eventLabel === span) {
+              setElementProps(span, { style: { color: '#409EFF', borderColor: '#409EFF' }});
+              setElementProps(eventIcon, { style: { color: '#409EFF' }});
+              dom.isShow = true;
+            } else {
             // debugger
-            setElementProps(dom.eventLabel,{style:{color: '#a6dfa5',borderColor: '#a6dfa5'}});
-            setElementProps(dom.eventLabel.getElementsByTagName('i')[0],{style:{color: '#a6dfa5'}});
-            dom.isShow = false;
-        }
+              setElementProps(dom.eventLabel, { style: { color: '#a6dfa5', borderColor: '#a6dfa5' }});
+              setElementProps(dom.eventLabel.getElementsByTagName('i')[0], { style: { color: '#a6dfa5' }});
+              dom.isShow = false;
+            }
+          });
+          // updata view
+          document.getElementById('event').__vue__.$forceUpdate();
+        });
       });
-      // updata view
-      document.getElementById('event').__vue__.$forceUpdate();
-    });
-  });
-  // add eventLabel
-  nodeEventMap.map((map, i) => {
-    map.eventNode.parentNode.appendChild(map.eventLabel);
-  });
-  // position
-  setPosition(nodeEventMap);
-  window.removeEventListener('resize', setPosition(nodeEventMap));
-  window.addEventListener('resize', setPosition(nodeEventMap));
-  return EventLabelCollection
-  } else {
-  return []
-  }
+      // add eventLabel
+      nodeEventMap.map((map, i) => {
+        map.eventNode.parentNode.appendChild(map.eventLabel);
+      });
+      // position
+      setPosition(nodeEventMap);
+      window.removeEventListener('resize', setPosition(nodeEventMap));
+      window.addEventListener('resize', setPosition(nodeEventMap));
+      return EventLabelCollection
+    } else {
+      return []
+    }
   }
   // createComponentsLabel
   function createComponentsLabel (el, vm, vmNname) {
-  const div = document.createElement('div');
-  div.title = `<${vmNname}/>`;
-  setElementProps(div,componentsLabelProps);
-  // createImg
-  const img = document.createElement('img');
-  setElementProps(img,componentsLabelImgProps);
-  div.appendChild(img);
-  // setEvent
-  div.addEventListener('click', (e) => {
-  e.stopPropagation();
-  e.preventDefault();
-  // clear previous style
-  if (preVm) {
-    let el = preVm.$el;
-    if (preVm.$options.comment) { // comment
-       el = el.parentNode;
-    }
-    setElementProps(el,{style:{outline:'1px solid green'}});
-  }
-  // set previous vm
-  preVm = vm;
-  // set curVm
-  vm.$root.VCIIndex.change(vm);
-  // set cur style
-  setElementProps(el,{style:{outline:'3px solid red',outlineOffset:'-3px'}});
-  // clearDomEventLabel
-  clearDomEventLabel && clearDomEventLabel();
-  // create event label
-  const domEventLabel = createDomEventLabel(vm);
-  // set clearDomEventLabel-fn
-  vm.$root.clearDomEventLabel = clearDomEventLabel = function () {
-    domEventLabel.map((v) => {
-      v.remove();
+    const div = document.createElement('div');
+    div.title = `<${vmNname}/>`;
+    setElementProps(div, componentsLabelProps);
+    // createImg
+    const img = document.createElement('img');
+    setElementProps(img, componentsLabelImgProps);
+    div.appendChild(img);
+    // setEvent
+    div.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      // clear previous style
+      if (preVm) {
+        let el = preVm.$el;
+        if (preVm.$options.comment) { // comment
+          el = el.parentNode;
+        }
+        setElementProps(el, { style: { outline: '1px solid green' }});
+      }
+      // set previous vm
+      preVm = vm;
+      // set curVm
+      vm.$root.VCIIndex.change(vm);
+      // set cur style
+      setElementProps(el, { style: { outline: '3px solid red', outlineOffset: '-3px' }});
+      // clearDomEventLabel
+      clearDomEventLabel && clearDomEventLabel();
+      // create event label
+      const domEventLabel = createDomEventLabel(vm);
+      // set clearDomEventLabel-fn
+      vm.$root.clearDomEventLabel = clearDomEventLabel = function () {
+        domEventLabel.map((v) => {
+          v.remove();
+        });
+      };
+      // set global $vm
+      window.$vm = vm;
     });
-  };
-  // set global $vm
-  window.$vm = vm;
-  });
-  // 把创建后的子元素追加到组件父级元素中
-  // el.parentNode.appendChild(div);
-  // 把创建后的子元素追加到组件元素中
-  // el.appendChild(div);
-  // positiong ComponentsLabel
-  function setCreateComponentsLabelPosition (map) {
-  map.map((map, i) => {
-    const offsetTop = map.vmEl.offsetTop;
-    const offsetLeft = map.vmEl.offsetLeft;
-    const top = offsetTop;
-    // let left = map.vmEl.offsetWidth/2 + offsetLeft
-    const left = offsetLeft;
-    setElementProps(map.componentsLabel,{style:{top:(top+'px'),left: (left + 'px')}});
-  });
-  }
-  window.setTimeout(() => {
-  setCreateComponentsLabelPosition([{
-    vmEl: el,
-    componentsLabel: div
-  }]);
-  }, 2000);
-  window.addEventListener('resize', () => {
-  setCreateComponentsLabelPosition([{
-    vmEl: el,
-    componentsLabel: div
-  }]);
-  });
-  return div
+    // 把创建后的子元素追加到组件父级元素中
+    // el.parentNode.appendChild(div);
+    // 把创建后的子元素追加到组件元素中
+    // el.appendChild(div);
+    // positiong ComponentsLabel
+    function setCreateComponentsLabelPosition (map) {
+      map.map((map, i) => {
+        const offsetTop = map.vmEl.offsetTop;
+        const offsetLeft = map.vmEl.offsetLeft;
+        const top = offsetTop;
+        // let left = map.vmEl.offsetWidth/2 + offsetLeft
+        const left = offsetLeft;
+        setElementProps(map.componentsLabel, { style: { top: (top + 'px'), left: (left + 'px') }});
+      });
+    }
+    window.setTimeout(() => {
+      setCreateComponentsLabelPosition([{
+        vmEl: el,
+        componentsLabel: div
+      }]);
+    }, 2000);
+    window.addEventListener('resize', () => {
+      setCreateComponentsLabelPosition([{
+        vmEl: el,
+        componentsLabel: div
+      }]);
+    });
+    return div
   }
 
   let _Vue;
@@ -2705,3 +2705,4 @@
   return VCI;
 
 })));
+//# sourceMappingURL=vue-component-inspector.js.map
