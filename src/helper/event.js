@@ -1,7 +1,7 @@
 export function addEventList (vm) {
     const eventList = { dom: [], com: [] }
 
-    /** *************** 添加DOM事件 **********************/
+    /** *************** addDOMEvent **********************/
         // 获取具有DOM事件的Vnode
     const VnodeListWithEvent = []
     function parseVnodehEvent (vnode, VnodeListWithEvent) {
@@ -61,7 +61,7 @@ export function addEventList (vm) {
 
     vm.$options.eventList = eventList
 
-    /** *************** 添加组件事件 **********************/
+    /** *************** addCOMEvent **********************/
 
         // if(vm.$options.name === "Container01"){
         //     debugger

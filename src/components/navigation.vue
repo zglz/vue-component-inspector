@@ -132,7 +132,7 @@ export default {
       const vm = data.vm
       if (this.curVm !== vm) {
         let el = vm.$el
-        if (vm.$options.comment) { // 是注释组件
+        if (vm.$options.comment) { // comment-com
           el = el.parentNode
         }
         el.style.outline = ''

@@ -77,12 +77,12 @@ export default {
       // datatree
       treeData: [],
       filterText: '',
-      treeIdArr: [],     // 展开id
+      treeIdArr: [],     // data-tree-expanded-id
       propsTreeData: [],
-      propsTreeIdArr: [],     // 展开id
-      viewType: true,    // 视图类型
-      dataSource: null,  // data源格式
-      noReactiveData: []   // 是否存在非响应式字段
+      propsTreeIdArr: [],     // props-tree-expanded-id
+      viewType: true,
+      dataSource: null,
+      noReactiveData: []
     }
   },
   watch: {

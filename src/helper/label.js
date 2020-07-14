@@ -182,9 +182,9 @@ export function createComponentsLabel (el, vm, vmNname) {
     // set global $vm
     window.$vm = vm
   })
-  // 把创建后的子元素追加到组件父级元素中
+  // Append the created child element to the component parent element
   // el.parentNode.appendChild(div);
-  // 把创建后的子元素追加到组件元素中
+  // Append the created child element to the component element
   // el.appendChild(div);
   // positiong ComponentsLabel
   function setCreateComponentsLabelPosition (map) {

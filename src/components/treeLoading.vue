@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'Basic',
+  name: 'TreeLoading',
   components: {
   },
   props: {
