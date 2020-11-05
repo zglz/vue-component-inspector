@@ -46,6 +46,9 @@ Vue.use(VCI, options)
 ### 新增功能
 1.非响检测
 
+视频演示：
+https://www.bilibili.com/video/BV1vi4y1L7kf/
+
 ![](./assets/feixiangjiance.jpg)
 
     
