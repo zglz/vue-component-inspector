@@ -7,6 +7,7 @@ const replace = require('rollup-plugin-replace')
 const uglify = require('rollup-plugin-uglify')
 const version = process.env.VERSION || require('../package.json').version
 const vue = require('rollup-plugin-vue');
+const terser = require("rollup-plugin-terser");
 const banner =
 `/*!
   * vue-component-inspector v${version}
@@ -59,18 +60,22 @@ function genConfig (opts) {
         node(),
         cjs(),
         vue(),
+        // babel(),
         replace({
           __VERSION__: version
         }),
-        // uglify.uglify()
+        terser.terser()
+
       ]
     },
     output: {
       file: opts.file,
       format: opts.format,
       banner,
-      name: 'vueComponentInspector'
-    }
+      name: 'vueComponentInspector',
+      sourceMap: false
+    },
+
   }
 
   if (opts.env) {

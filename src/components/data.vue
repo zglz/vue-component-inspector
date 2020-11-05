@@ -1,12 +1,13 @@
 <template>
   <div class="data-container" style="">
     <div class="treeWraper">
-
         <!--{{curVm&&curVm._data}}-->
-        <div v-if="0">
-            noReactiveData
-            {{noReactiveData}}
+        <div v-if="noReactiveData.length>0" class="no-reactive-data">
+          <span v-for="(item,index) in noReactiveData" :key="index" style="color: red;font-weight: bolder;font-size: 16px;">
+                {{ item }} <span v-if="noReactiveData.length-1 !== index">,</span>
+          </span>
         </div>
+
         <!--<button @click="createTreeData(curVm,true)">Check</button>-->
         <!--<span @click="viewDataSource" class="view-source-btn">viewDataSource</span>-->
         <!--<el-input  v-if="treeData.length>0" placeholder="Enter keywords to filter" v-model="filterText" size="mini"></el-input>-->
@@ -25,7 +26,10 @@
               @node-expand="(node, data)=>{expandTree(node, data,treeIdArr)}"
               @node-collapse="(node, data)=>{collapseTree(node, data,treeIdArr)}">
                 <span class="custom-tree-node" slot-scope="{ node, data }">
-                        <span v-if="data.root === true" class="tree-root">$Data</span>
+                        <span v-if="data.root === true" class="tree-root">
+                            $Data
+                             <i v-if="curVm" @click.stop="createTreeData(curVm,true)" class="el-icon-magic-stick magic-stick"></i>
+                        </span>
                         <span v-else><dataItem :item="data" type="dataTree"></dataItem></span>
                  </span>
         </el-tree>
@@ -165,8 +169,9 @@ export default {
           if (!data.hasOwnProperty(key)) { continue }
           const field = data[key]
           const property = Object.getOwnPropertyDescriptor(data, key)
+            debugger
           if (!Array.isArray(data) && (!property.get || (property.get.name !== 'reactiveGetter')) && check) {
-            this.noReactiveData.push(data[key])
+            this.noReactiveData.push(key)
           }
           const fieldWithproperty = {
             id: ++id,   // id
@@ -198,16 +203,17 @@ export default {
       }
     },
     createTreeData (vm, isCheck) {
-      if (!isCheck) {
+//      if (!isCheck) {
         // 非数据检测
+        this.noReactiveData = []
         this.treeData = [{
           id: 0,
           label: 'data',
           value: 'data',
           root: true,
-          children: this.odJ2treeJ(this.mdJ21dJ(vm._data, false), 'id', 'pid', 'children')
+          children: this.odJ2treeJ(this.mdJ21dJ(vm._data, isCheck), 'id', 'pid', 'children')
         }]
-      }
+//      }
       this.$emit('showData', JSON.stringify(this.curVm._data, null, 5), false)
     },
     createPropsTreeData (vm) {
@@ -251,6 +257,25 @@ export default {
       color: #67c23a;
       font-size: 16px;
   }
+  .magic-stick{
+      color: #6e7f92;
+      padding: 2px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 15px;
+      font-weight: bolder;
+  }
+  .magic-stick:hover{
+      color: #ffffff;
+      border-radius: 15px;
+      background: #519eff;
+  }
+
+    .no-reactive-data{
+        margin-left: 25px;
+        margin-bottom: 10px;
+    }
+
 
 
 </style>

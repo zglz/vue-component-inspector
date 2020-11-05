@@ -43,6 +43,13 @@ Vue.use(VCI, options)
 
 ## 使用教程
 
+### 新增功能
+1.非响检测
+
+![](./assets/feixiangjiance.jpg)
+
+    
+
 ### 视频教程
 [视频地址](https://www.bilibili.com/video/BV19g4y1v7g6): https://www.bilibili.com/video/BV19g4y1v7g6
 

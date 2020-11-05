@@ -1,5 +1,7 @@
 <template>
-  <div class="input-container"/>
+  <div class="input-container">
+    组件A
+  </div>
 </template>
 <script>
 export default {
@@ -29,7 +31,10 @@ export default {
   data () {
     return {
       defaultValue: true,
-      time: 1
+      boy:{
+
+      }
+
     }
   },
   watch: {
@@ -52,6 +57,13 @@ export default {
 </script>
 
 <style scoped>
+  .input-container{
+    height: 100px;
+    width: 200px;
+    background: #e6e6fa;
+    text-align: center;
+    font-size: 30px;
+  }
 </style>
 <style>
 </style>
